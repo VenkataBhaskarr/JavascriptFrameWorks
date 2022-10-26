@@ -1,1 +1,1 @@
-# Contains React
+### Contains the React version of the project
