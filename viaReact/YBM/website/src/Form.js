@@ -1,10 +1,15 @@
 import {useState} from 'react'
-
+import axios  from 'axios';
 function Form(){
     const [name , setName] = useState('')
     const [password , setPassword] = useState('')
      function onSubmit(e) {
-        alert(name)
+         e.preventDefault();
+       axios.post("https://opensourceapi.vercel.app/api/health" ,{
+message : name
+       }).then((res) => {
+           console.log(res)
+       })
      }
     return (
         <div>
