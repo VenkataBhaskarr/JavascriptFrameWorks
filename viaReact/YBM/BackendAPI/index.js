@@ -6,21 +6,19 @@ const users = [{
     'password' : 'password'
 }]
 
+
+app.use(express.json());
+
+
 app.get('/' , (req,res) => {
-    res.send("hello world")
+    res.send(users)
 })
 
-app.get('/post' , (req , res) => {
-    
-    res.send("kusalame")
-})
-
-
-
-app.post('/post' , (req,res) => {
-    // const user = { ...req.body }
-    // users.push(user)
-    res.send("pushed succesfully")
+app.post('/post' , (req , res) => {
+    const user = { ...req.body }
+    users.push(user)
+    // const user = {...req.body}
+    res.send("success")
 })
 
 app.listen(PORT, () => console.log("up and running hell"))
