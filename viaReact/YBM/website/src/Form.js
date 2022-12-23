@@ -5,11 +5,10 @@ function Form(){
     const [password , setPassword] = useState('')
      function onSubmit(e) {
          e.preventDefault();
-       axios.post("https://opensourceapi.vercel.app/api/health" ,{
-message : name
-       }).then((res) => {
-           console.log(res)
-       })
+       axios.post("http://localhost:5000/post" , {
+           name : name,
+         password : password
+       }).then((res) => {console.log(res)})
      }
     return (
         <div>

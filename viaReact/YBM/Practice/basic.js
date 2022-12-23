@@ -6,3 +6,4 @@ const a = new Promise(function(resolve, reject) {
 a.then((res) => {
     console.log(res)
 })
+
